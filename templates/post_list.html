@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publication List</title>
+</head>
+<body>
+    <h1>Listados de BlogPost</h1>
+    {% for publication in post_list %}
+        <article>
+            <h2>{{ publication.title }}</h2>
+            <p>{{ publication.content }}</p>
+            <p><em>By {{ publication.author }} on {{ publication.created_at }}</em></p>
+        </article>
+    {% empty %}
+        <p>No hay Publicaciones Disponibles.</p>
+    {% endfor %}
+</body>
+</html>
